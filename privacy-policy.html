@@ -1,67 +1,331 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.4">
-  <style type="text/css">
-    body {background-color: #f9f9f9}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #777d91; -webkit-text-stroke: #777d91}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 17.0px 'Helvetica Neue'; color: #ffffff; color: rgba(255, 255, 255, 0.82); -webkit-text-stroke: rgba(255, 255, 255, 0.82)}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px '.Apple Color Emoji UI'; color: #141722; -webkit-text-stroke: #141722}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #3a3f55; -webkit-text-stroke: #3a3f55}
-    p.p10 {margin: 0.0px 0.0px 12.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #3a3f55; -webkit-text-stroke: #3a3f55}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #6d6d6d; -webkit-text-stroke: #6d6d6d; min-height: 18.0px}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.0px 'Helvetica Neue'; color: #777d91; -webkit-text-stroke: #777d91}
-    li.li8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #3a3f55; -webkit-text-stroke: #3a3f55}
-    span.s1 {font-kerning: none; background-color: #1faea0}
-    span.s2 {font-kerning: none; background-color: #ffffff}
-    span.s3 {font-kerning: none; background-color: #e3f8f6}
-    span.s4 {font-kerning: none}
-    span.s5 {-webkit-text-stroke: 0px #000000}
-    span.s6 {font: 15.0px 'Helvetica Neue'; font-kerning: none; color: #1faea0; -webkit-text-stroke: 0px #1faea0}
-    span.s7 {font: 13.0px 'Helvetica Neue'; font-kerning: none; color: #1faea0; -webkit-text-stroke: 0px #1faea0}
-    ul.ul1 {list-style-type: disc}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Eve Countdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #19BAB0;
+      --teal-light: #e8f9f8;
+      --teal-mid:   #b2e8e6;
+      --ink:        #1a1f2e;
+      --ink-mid:    #4a5168;
+      --ink-soft:   #8a90a2;
+      --rule:       #e8eaf0;
+      --bg:         #fafafa;
+      --white:      #ffffff;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+    }
+
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 0 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--teal);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .app-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .header-text h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .header-text p {
+      font-size: 0.8125rem;
+      color: var(--ink-soft);
+      margin-top: 0.2rem;
+      font-weight: 400;
+    }
+
+    /* ── Hero band ── */
+    .hero {
+      background: var(--teal);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.0625rem;
+      margin-top: 0.75rem;
+      font-weight: 300;
+    }
+
+    /* ── Callout card ── */
+    .callout {
+      max-width: 720px;
+      margin: 2.5rem auto 0;
+      padding: 0 2rem;
+    }
+
+    .callout-card {
+      background: var(--teal-light);
+      border: 1.5px solid var(--teal-mid);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .callout-card .icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .callout-card p {
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .callout-card p span {
+      font-weight: 300;
+      color: var(--ink-mid);
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.9375rem;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 5rem;
+    }
+
+    section {
+      margin-bottom: 2.75rem;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.3125rem;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    p {
+      font-size: 0.9375rem;
+      color: var(--ink-mid);
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 0.5rem 0 0.75rem;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 0.9375rem;
+      color: var(--ink-mid);
+      padding: 0.35rem 0 0.35rem 1.5rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .rule { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--rule);
+      padding: 1.75rem 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8125rem;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    footer a { font-size: 0.8125rem; }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 1.75rem; }
+      .callout-card { flex-direction: column; gap: 0.5rem; }
+    }
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1"><b>47</b><b></b></span></p>
-<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s2">Eve Countdown</span></h1>
-<p class="p3"><span class="s2">for macOS</span></p>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 36.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s1">Privacy Policy</span></h2>
-<p class="p5"><span class="s1">Simple, honest, and short enough to actually read.</span></p>
-<p class="p6"><span class="s3">🔒</span></p>
-<p class="p7"><span class="s3">Eve Countdown collects no personal data whatsoever.</span></p>
-<p class="p8"><span class="s3">Everything you enter — event names, dates, and preferences — stays on your Mac. It is never transmitted anywhere.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s4">What data does Eve collect?</span></h3>
-<p class="p10"><span class="s4">None. Eve Countdown does not collect, transmit, store remotely, or share any personal information.</span></p>
-<p class="p8"><span class="s4">The app has no analytics, no crash reporting service, no advertising SDK, and no network connection of any kind. It does not know who you are, where you are, or how you use it.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s4">What is stored on your device?</span></h3>
-<p class="p10"><span class="s4">Eve stores the following data locally on your Mac using macOS's standard UserDefaults system:</span></p>
-<ul class="ul1">
-  <li class="li8"><span class="s5"></span><span class="s4">Your countdown event names and target dates</span></li>
-  <li class="li8"><span class="s5"></span><span class="s4">Your chosen colours, ring styles, and widget sizes</span></li>
-  <li class="li8"><span class="s5"></span><span class="s4">Window positions and display preferences</span></li>
-  <li class="li8"><span class="s5"></span><span class="s4">Your language preference</span></li>
-</ul>
-<p class="p8"><span class="s4">This data never leaves your device. It is not backed up to iCloud, not synced to any server, and not accessible to anyone other than you.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s4">In-App Purchase</span></h3>
-<p class="p10"><span class="s4">Eve Countdown offers an optional one-time in-app purchase (Eve Countdown Premium). All payment processing is handled entirely by Apple through the App Store. Eve does not handle, store, or have access to any payment information.</span></p>
-<p class="p8"><span class="s4">Apple's privacy policy applies to the purchase transaction. You can read it at <a href="https://www.apple.com/legal/privacy/"><span class="s6">apple.com/legal/privacy</span></a>.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s4">Third-party services</span></h3>
-<p class="p8"><span class="s4">Eve Countdown uses no third-party services, frameworks, or SDKs beyond what Apple provides as part of macOS. There are no advertising networks, analytics platforms, social media integrations, or external APIs.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s4">Children's privacy</span></h3>
-<p class="p8"><span class="s4">Eve Countdown does not collect data from anyone, including children. The app is rated 4+ on the Mac App Store.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s4">Changes to this policy</span></h3>
-<p class="p8"><span class="s4">If Eve Countdown ever changes in a way that affects privacy — for example, if a future version adds crash reporting — this page will be updated to reflect that before the update is released. The date at the bottom of this page shows when it was last revised.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s4">Contact</span></h3>
-<p class="p8"><span class="s4">If you have any questions about this privacy policy, please get in touch via the <a href="file:///Users/ianmoulster/Documents/Developer/CountdownApp/Web%20pages/support.html"><span class="s6">support page</span></a>.</span></p>
-<p class="p11"><span class="s4"></span><br></p>
-<p class="p3"><span class="s4">Last updated: May 2026. Effective immediately.</span></p>
-<p class="p12"><span class="s2">© 2026 Frowning Gorilla Ltd  ·  <a href="file:///Users/ianmoulster/Documents/Developer/CountdownApp/Web%20pages/support.html"><span class="s7">Support</span></a></span></p>
+
+<header>
+  <div class="header-inner">
+    <div class="app-icon">
+      <!-- Simple ring + number icon in SVG -->
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="10" stroke="white" stroke-width="2.5"
+                stroke-linecap="round" stroke-dasharray="52 10"
+                transform="rotate(-90 14 14)"/>
+        <text x="14" y="18.5" text-anchor="middle"
+              font-family="system-ui" font-size="9" font-weight="700"
+              fill="white">47</text>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Eve Countdown</h1>
+      <p>for macOS</p>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <h2>Privacy Policy</h2>
+  <p>Simple, honest, and short enough to actually read.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-card">
+    <div class="icon">🔒</div>
+    <p>
+      Eve Countdown collects no personal data whatsoever.
+      <span>Everything you enter — event names, dates, and preferences — stays on your Mac. It is never transmitted anywhere.</span>
+    </p>
+  </div>
+</div>
+
+<main>
+
+  <section>
+    <h3>What data does Eve collect?</h3>
+    <p>None. Eve Countdown does not collect, transmit, store remotely, or share any personal information.</p>
+    <p>The app has no analytics, no crash reporting service, no advertising SDK, and no network connection of any kind. It does not know who you are, where you are, or how you use it.</p>
+  </section>
+
+  <section>
+    <h3>What is stored on your device?</h3>
+    <p>Eve stores the following data locally on your Mac using macOS's standard UserDefaults system:</p>
+    <ul>
+      <li>Your countdown event names and target dates</li>
+      <li>Your chosen colours, ring styles, and widget sizes</li>
+      <li>Window positions and display preferences</li>
+      <li>Your language preference</li>
+    </ul>
+    <p>This data never leaves your device. It is not backed up to iCloud, not synced to any server, and not accessible to anyone other than you.</p>
+  </section>
+
+  <section>
+    <h3>In-App Purchase</h3>
+    <p>Eve Countdown offers an optional one-time in-app purchase (Eve Countdown Premium). All payment processing is handled entirely by Apple through the App Store. Eve does not handle, store, or have access to any payment information.</p>
+    <p>Apple's privacy policy applies to the purchase transaction. You can read it at <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>.</p>
+  </section>
+
+  <section>
+    <h3>Third-party services</h3>
+    <p>Eve Countdown uses no third-party services, frameworks, or SDKs beyond what Apple provides as part of macOS. There are no advertising networks, analytics platforms, social media integrations, or external APIs.</p>
+  </section>
+
+  <section>
+    <h3>Children's privacy</h3>
+    <p>Eve Countdown does not collect data from anyone, including children. The app is rated 4+ on the Mac App Store.</p>
+  </section>
+
+  <section>
+    <h3>Changes to this policy</h3>
+    <p>If Eve Countdown ever changes in a way that affects privacy — for example, if a future version adds crash reporting — this page will be updated to reflect that before the update is released. The date at the bottom of this page shows when it was last revised.</p>
+  </section>
+
+  <section>
+    <h3>Contact</h3>
+    <p>If you have any questions about this privacy policy, please get in touch via the <a href="support.html">support page</a>.</p>
+  </section>
+
+  <hr class="rule">
+
+  <p style="font-size:0.8125rem; color: var(--ink-soft);">
+    Last updated: May 2026. Effective immediately.
+  </p>
+
+</main>
+
+<footer>
+  <p>© 2026 Frowning Gorilla Ltd &nbsp;·&nbsp; <a href="support.html">Support</a></p>
+</footer>
+
 </body>
 </html>
