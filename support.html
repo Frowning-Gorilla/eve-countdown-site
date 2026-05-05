@@ -1,493 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support — Eve Countdown</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --teal:       #19BAB0;
-      --teal-light: #e8f9f8;
-      --teal-mid:   #b2e8e6;
-      --teal-dark:  #149E96;
-      --ink:        #1a1f2e;
-      --ink-mid:    #4a5168;
-      --ink-soft:   #8a90a2;
-      --rule:       #e8eaf0;
-      --bg:         #fafafa;
-      --white:      #ffffff;
-      --error:      #dc3545;
-      --success:    #198754;
-    }
-
-    html { font-size: 16px; }
-
-    body {
-      font-family: 'DM Sans', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Header ── */
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-      padding: 0 2rem;
-    }
-
-    .header-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 2rem 0 1.75rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .app-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--teal);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .app-icon svg {
-      width: 28px;
-      height: 28px;
-    }
-
-    .header-text h1 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-
-    .header-text p {
-      font-size: 0.8125rem;
-      color: var(--ink-soft);
-      margin-top: 0.2rem;
-    }
-
-    /* ── Hero ── */
-    .hero {
-      background: var(--teal);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 2.25rem;
-      font-weight: 400;
-      color: var(--white);
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-    }
-
-    .hero p {
-      color: rgba(255,255,255,0.82);
-      font-size: 1.0625rem;
-      margin-top: 0.75rem;
-      font-weight: 300;
-    }
-
-    /* ── Main ── */
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 3rem 2rem 5rem;
-    }
-
-    /* ── FAQ ── */
-    .faq-section h3 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.3125rem;
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .faq {
-      margin-bottom: 1.5rem;
-    }
-
-    .faq-q {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.35rem;
-    }
-
-    .faq-a {
-      font-size: 0.9375rem;
-      color: var(--ink-mid);
-      line-height: 1.65;
-    }
-
-    .faq-a a {
-      color: var(--teal);
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .faq-a a:hover { text-decoration: underline; }
-
-    /* ── Divider ── */
-    .rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 2.75rem 0;
-    }
-
-    /* ── Contact form ── */
-    .contact-section h3 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.3125rem;
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .contact-section > p {
-      font-size: 0.9375rem;
-      color: var(--ink-mid);
-      margin-bottom: 1.75rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
-
-    label .required {
-      color: var(--teal);
-      margin-left: 2px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      font-family: 'DM Sans', system-ui, sans-serif;
-      font-size: 0.9375rem;
-      color: var(--ink);
-      background: var(--white);
-      border: 1.5px solid var(--rule);
-      border-radius: 10px;
-      padding: 0.65rem 0.875rem;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      outline: none;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--teal);
-      box-shadow: 0 0 0 3px rgba(25, 186, 176, 0.12);
-    }
-
-    select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a90a2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.875rem center;
-      padding-right: 2.5rem;
-      cursor: pointer;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 140px;
-      line-height: 1.6;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    /* ── Submit button ── */
-    .btn-submit {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--teal);
-      color: var(--white);
-      font-family: 'DM Sans', system-ui, sans-serif;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 10px;
-      padding: 0.75rem 1.75rem;
-      cursor: pointer;
-      transition: background 0.15s, transform 0.1s;
-      margin-top: 0.5rem;
-    }
-
-    .btn-submit:hover { background: var(--teal-dark); }
-    .btn-submit:active { transform: scale(0.98); }
-    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
-
-    /* ── Status messages ──
-       Hidden by default. JavaScript flips display: block when needed.
-       The .success and .error modifier classes only style appearance,
-       not visibility. */
-    .status {
-      display: none;
-      padding: 1rem 1.25rem;
-      border-radius: 10px;
-      font-size: 0.9375rem;
-      margin-top: 1.25rem;
-      font-weight: 500;
-    }
-
-    .status.success {
-      background: #d1e7dd;
-      color: var(--success);
-      border: 1px solid #a3cfbb;
-    }
-
-    .status.error {
-      background: #f8d7da;
-      color: var(--error);
-      border: 1px solid #f1aeb5;
-    }
-
-    /* ── Footer ── */
-    footer {
-      background: var(--white);
-      border-top: 1px solid var(--rule);
-      padding: 1.75rem 2rem;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 0.8125rem;
-      color: var(--ink-soft);
-      margin: 0;
-    }
-
-    footer a {
-      color: var(--teal);
-      font-size: 0.8125rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 600px) {
-      .hero h2 { font-size: 1.75rem; }
-      .form-row { grid-template-columns: 1fr; }
-    }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    body {background-color: #f9f9f9}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #777d91; -webkit-text-stroke: #777d91}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 17.0px 'Helvetica Neue'; color: #ffffff; color: rgba(255, 255, 255, 0.82); -webkit-text-stroke: rgba(255, 255, 255, 0.82)}
+    p.p7 {margin: 0.0px 0.0px 5.6px 0.0px; font: 15.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #3a3f55; -webkit-text-stroke: #3a3f55}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #6d6d6d; -webkit-text-stroke: #6d6d6d; min-height: 18.0px}
+    p.p11 {margin: 0.0px 0.0px 28.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #3a3f55; -webkit-text-stroke: #3a3f55}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: #000000; color: rgba(0, 0, 0, 0.25); -webkit-text-stroke: rgba(0, 0, 0, 0.25); background-color: #ffffff}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times; color: #141722; -webkit-text-stroke: #141722; background-color: #ffffff}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722; min-height: 18.0px}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.0px 'Helvetica Neue'; color: #777d91; -webkit-text-stroke: #777d91}
+    span.s1 {font-kerning: none; background-color: #1faea0}
+    span.s2 {font-kerning: none; background-color: #ffffff}
+    span.s3 {font-kerning: none}
+    span.s4 {font-kerning: none; color: #1faea0; -webkit-text-stroke: 0px #1faea0}
+    span.s5 {font: 15.0px 'Helvetica Neue'; font-kerning: none; color: #141722; -webkit-text-stroke: 0px #141722}
+    span.s6 {font: 15.0px 'Helvetica Neue'; font-kerning: none}
+    span.s7 {font: 13.0px 'Helvetica Neue'; font-kerning: none; color: #1faea0; -webkit-text-stroke: 0px #1faea0}
   </style>
 </head>
 <body>
-
-<header>
-  <div class="header-inner">
-    <div class="app-icon">
-      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="14" cy="14" r="10" stroke="white" stroke-width="2.5"
-                stroke-linecap="round" stroke-dasharray="52 10"
-                transform="rotate(-90 14 14)"/>
-        <text x="14" y="18.5" text-anchor="middle"
-              font-family="system-ui" font-size="9" font-weight="700"
-              fill="white">47</text>
-      </svg>
-    </div>
-    <div class="header-text">
-      <h1>Eve Countdown</h1>
-      <p>for macOS</p>
-    </div>
-  </div>
-</header>
-
-<div class="hero">
-  <h2>Support</h2>
-  <p>We're happy to help — usually within a day or two.</p>
-</div>
-
-<main>
-
-  <!-- FAQ -->
-  <div class="faq-section">
-    <h3>Common questions</h3>
-
-    <div class="faq">
-      <p class="faq-q">How do I add a new countdown?</p>
-      <p class="faq-a">Click the gear icon on any floating widget, or use the menu bar (⌘,) to open the Manage Countdowns panel. Click the + button to add a new countdown.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">Can I run more than one countdown at a time?</p>
-      <p class="faq-a">Yes — free users can run up to three simultaneous countdowns. Eve Countdown Premium removes that limit entirely.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">I bought Premium but it isn't showing as unlocked.</p>
-      <p class="faq-a">Open the Manage Countdowns panel and tap <strong>Restore Purchase</strong> at the bottom of the window. This syncs your purchase with the App Store and should unlock Premium immediately. If the problem persists, please get in touch below.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">How do I change the language?</p>
-      <p class="faq-a">Open the Manage Countdowns panel (⌘,). At the bottom of the window there's a language picker. Changing the language requires a relaunch — Eve will prompt you to restart automatically.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">The widget disappeared from my desktop.</p>
-      <p class="faq-a">Eve widgets are floating windows — they can sometimes end up off-screen if your display configuration changes. Open the Manage Countdowns panel, delete the affected countdown, and add it again. Your settings will need to be re-entered but the countdown will reappear.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">Does Eve work on multiple displays?</p>
-      <p class="faq-a">Yes — you can drag Eve widgets to any connected display. Their position is saved per-display when possible.</p>
-    </div>
-
-    <div class="faq">
-      <p class="faq-q">What macOS version does Eve require?</p>
-      <p class="faq-a">Eve Countdown requires macOS 14 Sonoma or later.</p>
-    </div>
-
-  </div>
-
-  <hr class="rule">
-
-  <!-- Contact form -->
-  <div class="contact-section">
-    <h3>Get in touch</h3>
-    <p>Couldn't find what you needed above? Send a message and we'll get back to you as soon as we can.</p>
-
-    <form id="supportForm" action="https://formspree.io/f/mvzlznya" method="POST">
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Your name <span class="required">*</span></label>
-          <input type="text" id="name" name="name" required
-                 placeholder="Jane Smith" autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label for="email">Email address <span class="required">*</span></label>
-          <input type="email" id="email" name="email" required
-                 placeholder="jane@example.com" autocomplete="email">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="topic">What's this about? <span class="required">*</span></label>
-        <select id="topic" name="topic" required>
-          <option value="" disabled selected>Choose a topic…</option>
-          <option value="purchase">Purchase or billing</option>
-          <option value="restore">Restore Premium</option>
-          <option value="bug">Something isn't working</option>
-          <option value="feature">Feature request or feedback</option>
-          <option value="other">Something else</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="macos">macOS version</label>
-        <input type="text" id="macos" name="macos"
-               placeholder="e.g. macOS 15 Sequoia — found in  → About This Mac">
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message <span class="required">*</span></label>
-        <textarea id="message" name="message" required
-                  placeholder="Describe what's happening — the more detail the better."></textarea>
-      </div>
-
-      <!-- Hidden field for subject line in email notifications -->
-      <input type="hidden" name="_subject" value="Eve Countdown Support Request">
-
-      <button type="submit" class="btn-submit" id="submitBtn">
-        Send message
-      </button>
-
-      <div class="status success" id="successMsg">
-        ✓ Message sent — thank you. We'll be in touch shortly.
-      </div>
-      <div class="status error" id="errorMsg">
-        Something went wrong. Please try again, or email us directly.
-      </div>
-
-    </form>
-  </div>
-
-</main>
-
-<footer>
-  <p>© 2026 Ian Moulster &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a></p>
-</footer>
-
-<script>
-  const form = document.getElementById('supportForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const successMsg = document.getElementById('successMsg');
-  const errorMsg = document.getElementById('errorMsg');
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'none';
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        form.reset();
-        successMsg.style.display = 'block';
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        throw new Error('Server error');
-      }
-    } catch {
-      errorMsg.style.display = 'block';
-      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send message';
-    }
-  });
-</script>
-
+<p class="p1"><span class="s1"><b>47</b><b></b></span></p>
+<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s2">Eve Countdown</span></h1>
+<p class="p3"><span class="s2">for macOS</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 36.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s1">Support</span></h2>
+<p class="p5"><span class="s1">We're happy to help — usually within a day or two.</span></p>
+<h3 style="margin: 0.0px 0.0px 20.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s3">Common questions</span></h3>
+<p class="p7"><span class="s3">How do I add a new countdown?</span></p>
+<p class="p8"><span class="s3">Click the gear icon on any floating widget, or use the menu bar (⌘,) to open the Manage Countdowns panel. Click the + button to add a new countdown.</span></p>
+<p class="p7"><span class="s3">Can I run more than one countdown at a time?</span></p>
+<p class="p8"><span class="s3">Yes — free users can run up to three simultaneous countdowns. Eve Countdown Premium removes that limit entirely.</span></p>
+<p class="p7"><span class="s3">I bought Premium but it isn't showing as unlocked.</span></p>
+<p class="p8"><span class="s3">Open the Manage Countdowns panel and tap Restore Purchase at the bottom of the window. This syncs your purchase with the App Store and should unlock Premium immediately. If the problem persists, please get in touch below.</span></p>
+<p class="p7"><span class="s3">How do I change the language?</span></p>
+<p class="p8"><span class="s3">Open the Manage Countdowns panel (⌘,). At the bottom of the window there's a language picker. Changing the language requires a relaunch — Eve will prompt you to restart automatically.</span></p>
+<p class="p7"><span class="s3">The widget disappeared from my desktop.</span></p>
+<p class="p8"><span class="s3">Eve widgets are floating windows — they can sometimes end up off-screen if your display configuration changes. Open the Manage Countdowns panel, delete the affected countdown, and add it again. Your settings will need to be re-entered but the countdown will reappear.</span></p>
+<p class="p7"><span class="s3">Does Eve work on multiple displays?</span></p>
+<p class="p8"><span class="s3">Yes — you can drag Eve widgets to any connected display. Their position is saved per-display when possible.</span></p>
+<p class="p7"><span class="s3">What macOS version does Eve require?</span></p>
+<p class="p8"><span class="s3">Eve Countdown requires macOS 14 Sonoma or later.</span></p>
+<p class="p9"><span class="s3"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 21.0px 'Helvetica Neue'; color: #141722; -webkit-text-stroke: #141722"><span class="s3">Get in touch</span></h3>
+<p class="p11"><span class="s3">Couldn't find what you needed above? Send a message and we'll get back to you as soon as we can.</span></p>
+<p class="p12"><span class="s3">Your name </span><span class="s4">*</span></p>
+<p class="p12"><span class="s3">Email address </span><span class="s4">*</span></p>
+<p class="p12"><span class="s3">What's this about? </span><span class="s4">*</span></p>
+<p class="p13"><span class="s5"><span class="Apple-converted-space">          </span></span><span class="s3">Choose a topic…</span></p>
+<p class="p14"><span class="s6"><span class="Apple-converted-space">          </span></span><span class="s3">Purchase or billing</span></p>
+<p class="p14"><span class="s6"><span class="Apple-converted-space">          </span></span><span class="s3">Restore Premium</span></p>
+<p class="p14"><span class="s6"><span class="Apple-converted-space">          </span></span><span class="s3">Something isn't working</span></p>
+<p class="p14"><span class="s6"><span class="Apple-converted-space">          </span></span><span class="s3">Feature request or feedback</span></p>
+<p class="p14"><span class="s6"><span class="Apple-converted-space">          </span></span><span class="s3">Something else</span></p>
+<p class="p15"><span class="s2"><span class="Apple-converted-space">        </span></span></p>
+<p class="p12"><span class="s3">macOS version</span></p>
+<p class="p12"><span class="s3">Message </span><span class="s4">*</span></p>
+<p class="p16"><span class="s1">Send message</span></p>
+<p class="p17"><span class="s2">© 2026 Frowning Gorilla Ltd  ·  <a href="file:///Users/ianmoulster/Documents/Developer/CountdownApp/Web%20pages/privacy-policy.html"><span class="s7">Privacy Policy</span></a></span></p>
 </body>
 </html>
