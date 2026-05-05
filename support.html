@@ -259,7 +259,10 @@
     .btn-submit:active { transform: scale(0.98); }
     .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
-    /* ── Status messages ── */
+    /* ── Status messages ──
+       Hidden by default. JavaScript flips display: block when needed.
+       The .success and .error modifier classes only style appearance,
+       not visibility. */
     .status {
       display: none;
       padding: 1rem 1.25rem;
@@ -270,14 +273,12 @@
     }
 
     .status.success {
-      display: block;
       background: #d1e7dd;
       color: var(--success);
       border: 1px solid #a3cfbb;
     }
 
     .status.error {
-      display: block;
       background: #f8d7da;
       color: var(--error);
       border: 1px solid #f1aeb5;
@@ -388,15 +389,6 @@
     <h3>Get in touch</h3>
     <p>Couldn't find what you needed above? Send a message and we'll get back to you as soon as we can.</p>
 
-    <!--
-      DEVELOPER NOTE:
-      Replace the form action below with your form handling endpoint.
-      Good options:
-        - Formspree (formspree.io) — free tier, just replace ACTION_URL
-        - Netlify Forms — add netlify attribute if hosted on Netlify
-        - Your own server endpoint
-      Example Formspree: action="https://formspree.io/f/YOUR_FORM_ID"
-    -->
     <form id="supportForm" action="https://formspree.io/f/mvzlznya" method="POST">
 
       <div class="form-row">
