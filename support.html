@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support — Eve Countdown</title>
+  <title>Support & FAQ — Eve Countdown</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -112,8 +112,8 @@
       padding: 3rem 2rem 5rem;
     }
 
-    /* ── FAQ ── */
-    .faq-section h3 {
+    /* ── Section Headings ── */
+    .faq-section h3, .contact-section h3 {
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: 1.3125rem;
       font-weight: 400;
@@ -124,21 +124,40 @@
       border-bottom: 1px solid var(--rule);
     }
 
+    /* ── FAQ ── */
     .faq {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .faq-q {
-      font-size: 0.9375rem;
+      font-size: 1.0625rem;
       font-weight: 600;
       color: var(--ink);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
 
     .faq-a {
       font-size: 0.9375rem;
       color: var(--ink-mid);
       line-height: 1.65;
+    }
+
+    .faq-a p {
+      margin-bottom: 1rem;
+    }
+
+    .faq-a p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-a ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--ink-mid);
+    }
+
+    .faq-a li {
+      margin-bottom: 0.4rem;
     }
 
     .faq-a a {
@@ -149,6 +168,25 @@
 
     .faq-a a:hover { text-decoration: underline; }
 
+    /* ── Images within FAQ ── */
+    .guide-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--rule);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      margin: 0.5rem 0 1rem;
+      display: block;
+    }
+    
+    .img-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      margin: 1rem 0;
+    }
+
     /* ── Divider ── */
     .rule {
       border: none;
@@ -157,17 +195,6 @@
     }
 
     /* ── Contact form ── */
-    .contact-section h3 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.3125rem;
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
     .contact-section > p {
       font-size: 0.9375rem;
       color: var(--ink-mid);
@@ -259,10 +286,7 @@
     .btn-submit:active { transform: scale(0.98); }
     .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
-    /* ── Status messages ──
-       Hidden by default. JavaScript flips display: block when needed.
-       The .success and .error modifier classes only style appearance,
-       not visibility. */
+    /* ── Status messages ── */
     .status {
       display: none;
       padding: 1rem 1.25rem;
@@ -310,6 +334,7 @@
     @media (max-width: 600px) {
       .hero h2 { font-size: 1.75rem; }
       .form-row { grid-template-columns: 1fr; }
+      .img-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -335,56 +360,126 @@
 </header>
 
 <div class="hero">
-  <h2>Support</h2>
-  <p>We're happy to help — usually within a day or two.</p>
+  <h2>Support & FAQ</h2>
+  <p>Learn how to use Eve, or get in touch if you need help.</p>
 </div>
 
 <main>
 
-  <!-- FAQ -->
   <div class="faq-section">
     <h3>Common questions</h3>
 
     <div class="faq">
       <p class="faq-q">How do I add a new countdown?</p>
-      <p class="faq-a">Click the gear icon on any floating widget, or use the menu bar (⌘,) to open the Manage Countdowns panel. Click the + button to add a new countdown.</p>
+      <div class="faq-a">
+        <p>Click the gear icon on any floating widget, or use the menu bar (⌘,) to open the Manage Countdowns panel. Click the + button to add a new countdown.</p>
+      </div>
     </div>
 
     <div class="faq">
       <p class="faq-q">Can I run more than one countdown at a time?</p>
-      <p class="faq-a">Yes — free users can run up to three simultaneous countdowns. Eve Countdown Premium removes that limit entirely.</p>
+      <div class="faq-a">
+        <p>Yes — free users can run up to three simultaneous countdowns. Eve Countdown Premium removes that limit entirely.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <p class="faq-q">How do I get the countdown spoken aloud?</p>
+      <div class="faq-a">
+        <p>Eve can read your remaining time aloud using text-to-speech. She smartly adapts what she says based on the time left: reading weeks and days when the event is far off, down to hours, minutes, and seconds on the final day.</p>
+        
+        <img src="Account countdown screen clip.png" alt="Announce countdown settings" class="guide-img" style="max-width: 320px;">
+        
+        <p>In the countdown settings, you have two scheduling modes:</p>
+        <ul>
+          <li><strong>Auto Mode (Default):</strong> Announcements intelligently become more frequent as your event approaches (shifting from weekly, to daily, to hourly, right down to every minute in the final stretch). It also guarantees announcements on major milestones (1 week, 1 day, 1 hour to go).</li>
+          <li><strong>Manual Mode:</strong> Turn off "Auto" to set a fixed interval (e.g. Every day, Every hour). If you select "Every day", you can pick the exact time of day you want it to speak.</li>
+        </ul>
+        <p><strong>Quiet Hours:</strong> When using Manual Mode, you can enable Quiet Hours to prevent Eve from speaking during the night or while you are working.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <p class="faq-q">Can I change when the Days Ring starts calculating from?</p>
+      <div class="faq-a">
+        <p>Yes. The large outer "Days" ring visually tracks the entire duration of your wait, depleting as your event gets closer. By default, this ring begins calculating from the moment you create the countdown.</p>
+        
+        <div class="img-row">
+          <div>
+            <img src="Days ring clip.png" alt="Days ring custom start date setting" class="guide-img">
+            <p style="font-size: 0.85rem; color: var(--ink-soft); line-height: 1.4;"><em>Set any past date to anchor the start of your countdown.</em></p>
+          </div>
+          <div>
+            <img src="Days ring in use clip.png" alt="Days ring in use on the widget" class="guide-img">
+            <p style="font-size: 0.85rem; color: var(--ink-soft); line-height: 1.4;"><em>The days ring depletes based on the total time between the start date and the event date.</em></p>
+          </div>
+        </div>
+
+        <p>If you've already been waiting a while before adding the event to Eve, you can set a <strong>custom start date in the past</strong>. This ensures the visual progress of the Days Ring accurately reflects the true length of your wait. To do this, open your countdown settings and adjust the date under the "Days Ring" section.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <p class="faq-q">What do I get with Eve Countdown Premium?</p>
+      <div class="faq-a">
+        <p>Eve Countdown Premium is a one-time, lifetime purchase that unlocks the full set of customisation options and removes the free-tier limits. Here is what is included:</p>
+        <ul>
+          <li><strong>Unlimited countdowns:</strong> Free users can create up to 3 countdowns. Premium removes the limit, so you can track as many events as you like — birthdays, holidays, deadlines, launches, anniversaries — side by side.</li>
+          <li><strong>Every background colour:</strong> The free version comes in teal. Premium unlocks the full palette of 11 background colours, so you can match each countdown to the mood of the event — warm yellow for a holiday, deep indigo for a launch, classic black for a formal occasion.</li>
+          <li><strong>Rainbow and single‑colour rings:</strong> By default, ring colours adjust automatically to suit the background. Premium adds two extra ring styles: a vibrant rainbow palette and a single‑colour override, letting you fine-tune the look of each widget.</li>
+          <li><strong>Compact widget size:</strong> The standard widget shows four rings side by side. Premium adds a compact size — a smaller, square widget that highlights the headline number, ideal for tucking into the corner of your screen.</li>
+          <li><strong>Adjustable opacity:</strong> Free widgets are fully opaque. With Premium you can dial each widget's transparency up or down, so it blends gently into your desktop instead of dominating it.</li>
+          <li><strong>A cleaner interface:</strong> Upgrade prompts and reminders disappear once you're on Premium, leaving a tidier Manage Countdowns window.</li>
+        </ul>
+        <p><strong>A few other things worth knowing:</strong></p>
+        <ul>
+          <li>It's a one-time purchase. No subscription, no renewals — buy it once and it's yours for good.</li>
+          <li>Family Sharing is supported. Anyone in your Family Sharing group gets Premium too.</li>
+          <li>Restore on any Mac. Signed in with the same Apple Account? Just open the upgrade screen and tap Restore to bring your purchase across.</li>
+        </ul>
+        <p><em>Note: Spoken countdown announcements, large‑text mode, always‑on‑top, and the celebration animation when a countdown completes remain free and unchanged for everyone.</em></p>
+      </div>
     </div>
 
     <div class="faq">
       <p class="faq-q">I bought Premium but it isn't showing as unlocked.</p>
-      <p class="faq-a">Open the Manage Countdowns panel and tap <strong>Restore Purchase</strong> at the bottom of the window. This syncs your purchase with the App Store and should unlock Premium immediately. If the problem persists, please get in touch below.</p>
+      <div class="faq-a">
+        <p>Open the Manage Countdowns panel and tap <strong>Restore Purchase</strong> at the bottom of the window. This syncs your purchase with the App Store and should unlock Premium immediately. If the problem persists, please get in touch below.</p>
+      </div>
     </div>
 
     <div class="faq">
       <p class="faq-q">How do I change the language?</p>
-      <p class="faq-a">Open the Manage Countdowns panel (⌘,). At the bottom of the window there's a language picker. Changing the language requires a relaunch — Eve will prompt you to restart automatically.</p>
+      <div class="faq-a">
+        <p>Open the Manage Countdowns panel (⌘,). At the bottom of the window there's a language picker. Changing the language requires a relaunch — Eve will prompt you to restart automatically.</p>
+      </div>
     </div>
 
     <div class="faq">
       <p class="faq-q">The widget disappeared from my desktop.</p>
-      <p class="faq-a">Eve widgets are floating windows — they can sometimes end up off-screen if your display configuration changes. Open the Manage Countdowns panel, delete the affected countdown, and add it again. Your settings will need to be re-entered but the countdown will reappear.</p>
+      <div class="faq-a">
+        <p>Eve widgets are floating windows — they can sometimes end up off-screen if your display configuration changes. Open the Manage Countdowns panel, delete the affected countdown, and add it again. Your settings will need to be re-entered but the countdown will reappear.</p>
+      </div>
     </div>
 
     <div class="faq">
       <p class="faq-q">Does Eve work on multiple displays?</p>
-      <p class="faq-a">Yes — you can drag Eve widgets to any connected display. Their position is saved per-display when possible.</p>
+      <div class="faq-a">
+        <p>Yes — you can drag Eve widgets to any connected display. Their position is saved per-display when possible.</p>
+      </div>
     </div>
 
     <div class="faq">
       <p class="faq-q">What macOS version does Eve require?</p>
-      <p class="faq-a">Eve Countdown requires macOS 14 Sonoma or later.</p>
+      <div class="faq-a">
+        <p>Eve Countdown requires macOS 14 Sonoma or later.</p>
+      </div>
     </div>
 
   </div>
 
   <hr class="rule">
 
-  <!-- Contact form -->
   <div class="contact-section">
     <h3>Get in touch</h3>
     <p>Couldn't find what you needed above? Send a message and we'll get back to you as soon as we can.</p>
@@ -419,7 +514,7 @@
       <div class="form-group">
         <label for="macos">macOS version</label>
         <input type="text" id="macos" name="macos"
-               placeholder="e.g. macOS 15 Sequoia — found in  → About This Mac">
+               placeholder="e.g. macOS 15 Sequoia — found in  → About This Mac">
       </div>
 
       <div class="form-group">
@@ -428,7 +523,6 @@
                   placeholder="Describe what's happening — the more detail the better."></textarea>
       </div>
 
-      <!-- Hidden field for subject line in email notifications -->
       <input type="hidden" name="_subject" value="Eve Countdown Support Request">
 
       <button type="submit" class="btn-submit" id="submitBtn">
